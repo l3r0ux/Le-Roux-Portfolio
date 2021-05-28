@@ -57,7 +57,7 @@ const makeAndMoveStars = (i) => {
     // Move star
     const moveStarKeyframes = {
         transform: 'translateX(0)',
-        transform: 'translateX(-101vw)'
+        transform: 'translateX(-105vw)'
     }
     const options = {
         duration: duration,
@@ -104,7 +104,7 @@ let id = setInterval((function () {
             star.animationObj.play();
         }
     }
-}), 50)
+}), 1)
 
 // Making initial stars on page load
 makeStars(100);
