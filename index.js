@@ -161,7 +161,7 @@ document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight
 window.addEventListener('scroll', () => {
     // If bottom of landing page is still not at the top of the page, send transform degrees to css
     if (landingPage.getBoundingClientRect().bottom > 0) {
-        scrollPos.style.setProperty('--transform', `${parseFloat(90 - landingPage.getBoundingClientRect().bottom / window.innerHeight * 90)}deg`)
+        scrollPos.style.setProperty('--transform', `${(parseFloat(90 - landingPage.getBoundingClientRect().bottom / window.innerHeight * 90)).toFixed(2)}deg`)
         landingPage.style.opacity = `${landingPage.getBoundingClientRect().bottom / window.innerHeight}`
         homePage.style.opacity = `${1 - landingPage.getBoundingClientRect().bottom / window.innerHeight}`
 
