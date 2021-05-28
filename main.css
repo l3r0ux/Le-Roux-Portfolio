@@ -94,7 +94,7 @@ img {
 }
 @keyframes shadow {
     from {
-        filter: drop-shadow(0 0 50px #00ace0);
+        filter: drop-shadow(0 0 50px #55d7ff);
     }
     to {
         filter: drop-shadow(0 0 30px #007ea5);

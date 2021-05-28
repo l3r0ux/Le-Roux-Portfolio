@@ -107,7 +107,7 @@ let id = setInterval((function () {
 }), 1)
 
 // Making initial stars on page load
-makeStars(100);
+makeStars(80);
 
 // applyStarCount.addEventListener('click', () => {
 //     // Remove all stars
@@ -160,7 +160,7 @@ window.addEventListener('scroll', () => {
         if (stars.length <= 0) {
             // Make new amount of stars
             // makeStars(starCountInput.value);
-            makeStars(100);
+            makeStars(80);
         }
     }
     // if bottom of landing page is higher than top of screen, set degrees to 90 incase it couldnt update quick enough
