@@ -4,6 +4,36 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* #star-count {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: #ffae80;
+    padding: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 15px #ffae80;
+}
+
+#submit {
+    cursor: pointer;
+    background-color: #97e1ff;
+    border-radius: 2rem;
+    border: 1px solid #6171ff;
+    height: 1.5rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+
+#star-count input {
+    background-color: #97e1ff;
+    border-radius: 2rem;
+    border: 1px solid #6171ff;
+    height: 1.5rem;
+    width: 3rem;
+} */
+
 body {
     background-image: radial-gradient(ellipse at center, #99f8ff, #007ea5, rgb(0, 0, 0));
     background-attachment: fixed;
@@ -90,19 +120,7 @@ img {
     z-index: 1;
     mix-blend-mode: screen;
     transform: translateX(0);
-    animation-name: animate-star;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
 }
-@keyframes animate-star {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-101vw);
-    }
-}
-
 
 #home {
     filter: drop-shadow(0 0 20px #13151f);

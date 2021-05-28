@@ -1,9 +1,121 @@
 const landingPage = document.getElementById('landing');
 const homePage = document.getElementById('home');
 const scrollPos = document.querySelector(':root');
-
 // To animate home text svgs
 const homeText = document.querySelectorAll('#svg-text path');
+
+// const starCountInput = document.getElementById('star-count-input')
+// const applyStarCount = document.getElementById('submit')
+const colors = ['#97e1ff', '#ffae80', '#6171ff'];
+const shadows = ['#c0edff', '#ffd4bb', '#c0c1ff'];
+// Array containing all the stars and its related animation object so that we can check when a star is off screen and restart their animation
+const stars = [];
+
+const makeAndMoveStars = (i) => {
+    // Generate random top position, select correct colors and randomize size for star
+    const randSelectedColor = Math.floor(Math.random() * colors.length);
+    const randVerticalPos = Math.random() * landingPage.offsetHeight + landingPage.offsetTop;
+    const randSize = Math.floor(Math.random() * (7 - 1) + 1)
+
+    let horizontalPos = Math.random() * landingPage.offsetWidth + landingPage.offsetLeft;
+
+    // Make star
+    const star = document.createElement('span');
+    star.style.width = `${randSize}px`;
+    star.style.height = `${randSize}px`;
+    star.style.backgroundColor = `${colors[randSelectedColor]}`;
+    star.style.boxShadow = `0 0 10px ${shadows[randSelectedColor]}`;
+    star.style.top = `${randVerticalPos}px`;
+    star.style.left = `${horizontalPos}px`;
+    star.classList.add('star');
+    star.id = `${i}`
+    landingPage.append(star)
+
+    // Put corresponding animation duration/speed depending on size
+    let duration = 0;
+    switch (randSize) {
+        case 1:
+            duration = 90000;
+            break;
+        case 2:
+            duration = 80000;
+            break;
+        case 3:
+            duration = 70000;
+            break;
+        case 4:
+            duration = 60000;
+            break;
+        case 5:
+            duration = 50000;
+            break;
+        case 6:
+            duration = 40000;
+            break;
+    }
+
+    // Move star
+    const moveStarKeyframes = {
+        transform: 'translateX(0)',
+        transform: 'translateX(-101vw)'
+    }
+    const options = {
+        duration: duration,
+        fill: 'forwards',
+    }
+
+    // Push star to array to check on each one later
+    const specificStar = document.getElementById(`${i}`);
+
+    // Stars is an array of objects, each object containing the star, and its related animation object
+    stars.push({ specificStar, animationObj: specificStar.animate(moveStarKeyframes, options) });
+}
+
+// Function to make initial stars
+function makeStars(starCount) {
+    for (i = 0; i < starCount; i++) {
+        // Make stars
+        makeAndMoveStars(i);
+    }
+
+    // Prefill starcount with amount currently on screen
+    // starCountInput.value = starCount;
+}
+// function to remove stars
+function removeStars() {
+    // reset stars array
+    stars.length = 0;
+
+    // delete all stars on page
+    let starsInDOM = document.querySelectorAll('span');
+    for (let star of starsInDOM) {
+        star.remove()
+    }
+}
+
+// Periodically check when star is out of bounds of container -
+// - then cancel animation, restart it, and move it back to start
+let id = setInterval((function () {
+    for (let star of stars) {
+        if (star.specificStar.getBoundingClientRect().left <= landingPage.offsetLeft - 6) {
+            star.animationObj.cancel();
+            star.specificStar.style.left = `${landingPage.offsetLeft + landingPage.offsetWidth}px`;
+            star.specificStar.style.top = `${Math.random() * landingPage.offsetHeight + landingPage.offsetTop}px`
+            star.animationObj.play();
+        }
+    }
+}), 50)
+
+// Making initial stars on page load
+makeStars(100);
+
+// applyStarCount.addEventListener('click', () => {
+//     // Remove all stars
+//     removeStars();
+
+//     // Make new amount of stars
+//     makeStars(starCountInput.value);
+// })
 
 for (let i = 0; i < homeText.length; i++) {
     // The stroke-dasharray and the stroke-offset must start with the full length of the path
@@ -18,7 +130,7 @@ for (let i = 0; i < homeText.length; i++) {
 
     // Make keyframes and options for each letter(path)
     const keyframes = [
-        {strokeDashoffset: 0},
+        { strokeDashoffset: 0 },
     ];
 
     const options = {
@@ -41,97 +153,23 @@ window.addEventListener('scroll', () => {
         scrollPos.style.setProperty('--transform', `${parseFloat(90 - landingPage.getBoundingClientRect().bottom / window.innerHeight * 90)}deg`)
         landingPage.style.opacity = `${landingPage.getBoundingClientRect().bottom / window.innerHeight}`
         homePage.style.opacity = `${1 - landingPage.getBoundingClientRect().bottom / window.innerHeight}`
+
+        // If landing page bottom it still not at top -
+        // AND there are no stars(scrolled up from below the landing page, since stars are removed when scroll below landing page):
+        // add stars again
+        if (stars.length <= 0) {
+            // Make new amount of stars
+            // makeStars(starCountInput.value);
+            makeStars(100);
+        }
     }
     // if bottom of landing page is higher than top of screen, set degrees to 90 incase it couldnt update quick enough
     else {
         scrollPos.style.setProperty('--transform', '90deg')
         landingPage.style.opacity = '1';
         homePage.style.opacity = '1';
+
+        // Remove all stars
+        removeStars();
     }
 })
-
-// === STARS ===
-const colors = ['#97e1ff', '#ffae80', '#6171ff'];
-const shadows = ['#c0edff', '#ffd4bb', '#c0c1ff'];
-// Array for collecting stars so that we can check and remove them
-// Since we dont have access to them becuase of the setInterval
-const stars = [];
-
-const makeStars = (isInitial = false, i = 0) => {
-    // Generate random top position, select correct colors and randomize size
-    const randSelectedColor = Math.floor(Math.random() * colors.length);
-    const randVerticalPos = Math.random() * landingPage.offsetHeight + landingPage.offsetTop;
-    const randSize = Math.floor(Math.random() * (7 - 1) + 1)
-
-    let horizontalPos;
-    if (isInitial === true) {
-        horizontalPos = Math.random() * landingPage.offsetWidth + landingPage.offsetLeft;
-    } else {
-        horizontalPos = landingPage.offsetLeft + landingPage.offsetWidth;
-    }
-
-    const star = document.createElement('span');
-    star.style.width = `${randSize}px`;
-    star.style.height = `${randSize}px`;
-    star.style.backgroundColor = `${colors[randSelectedColor]}`;
-    star.style.boxShadow = `0 0 10px ${shadows[randSelectedColor]}`;
-    star.style.top = `${randVerticalPos}px`;
-    star.style.left = `${horizontalPos}px`;
-    star.classList.add('star')
-    // Give initial stars different ID so that they dont clash with generated stars when removing
-    star.id = isInitial ? `${i}` : `${i / 100}`
-    landingPage.append(star)
-
-    const specificStar = document.getElementById(isInitial ? `${i}` : `${i / 100}`);
-    stars.push(specificStar);
-
-    // Put corresponding animation duration/speed depending on size
-    switch (randSize) {
-        case 1:
-            specificStar.style.animationDuration = '90s';
-            break;
-        case 2:
-            specificStar.style.animationDuration = '70s';
-            break;
-        case 3:
-            specificStar.style.animationDuration = '50s';
-            break;
-        case 4:
-            specificStar.style.animationDuration = '40s';
-            break;
-        case 5:
-            specificStar.style.animationDuration = '30s';
-            break;
-        case 6:
-            specificStar.style.animationDuration = '20s';
-            break;
-    }
-}
-
-// Making 180 initial stars
-for (let i = 0; i < 90; i++) {
-    makeStars(true, i);
-}
-
-// Making one star every 250ms
-// Averages out to around 180 stars on screen at one time
-// The purpose of variable "i" is just to give stars id's
-let i = 0;
-setInterval(function () {
-    i++;
-    makeStars(false, i);
-}, 500);
-
-// Periodically check when star is out of bounds of landingPage, then remove from DOM and array
-setInterval((function () {
-    for (let specificStar of stars) {
-        if (specificStar.getBoundingClientRect().left <= landingPage.offsetLeft - 6) {
-            specificStar.remove();
-            const starIndex = stars.indexOf(specificStar);
-            stars.splice(starIndex, 1);
-        }
-    }
-    // console.log(`STARS ARRAY: ${stars.length}`);
-    // console.log(`STARS BROWSER: ${document.querySelectorAll('.star').length}`);
-}), 50)
-
