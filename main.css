@@ -50,8 +50,8 @@ img {
 }
 #svg-text path {
     stroke: #004a61;
-    stroke-width: 2px;
-    stroke-dashoffset: 500px;
+    /* Initial stroke width 0 */
+    stroke-width: 0;
     animation: fill 1s ease 2s forwards;
 }
 @keyframes fill {

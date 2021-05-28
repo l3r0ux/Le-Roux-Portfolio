@@ -4,15 +4,15 @@ const scrollPos = document.querySelector(':root');
 
 // To animate home text svgs
 const homeText = document.querySelectorAll('#svg-text path');
-// console.log(homeText[0])
+
 for (let i = 0; i < homeText.length; i++) {
     // The stroke-dasharray and the stroke-offset must start with the full length of the path
-    // console.log(`letter ${i} has a length of ${homeText[i].getTotalLength()}`)
 
     // Web animations API to animate each letter in javascript
     // Set each letters corresponding dasharray and offset values
     // Setting stroke-dasharray to full length of path, then ofsetting it by that length aswell to make it dissapear
     let specificLetter = homeText[i];
+    specificLetter.style.strokeWidth = '2px';
     specificLetter.style.strokeDasharray = specificLetter.getTotalLength();
     specificLetter.style.strokeDashoffset = specificLetter.getTotalLength();
 
