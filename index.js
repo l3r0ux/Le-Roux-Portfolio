@@ -2,6 +2,8 @@ const landingPage = document.getElementById('landing');
 const homePage = document.getElementById('home');
 const scrollPos = document.querySelector(':root');
 
+// To animate the text
+
 // Setting the page height to the height of the landing page and home page combined
 // so that the page is scrollable
 document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight}px`
@@ -81,7 +83,7 @@ const makeStars = (isInitial = false, i = 0) => {
 }
 
 // Making 180 initial stars
-for (let i = 0; i < 180; i++) {
+for (let i = 0; i < 90; i++) {
     makeStars(true, i);
 }
 
@@ -92,7 +94,7 @@ let i = 0;
 setInterval(function () {
     i++;
     makeStars(false, i);
-}, 250);
+}, 500);
 
 // Periodically check when star is out of bounds of landingPage, then remove from DOM and array
 setInterval((function () {

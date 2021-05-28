@@ -37,8 +37,6 @@ img {
 }
 
 #hero-text {
-    text-align: center;
-    font-size: 2rem;
     position: absolute;
     left: 15%;
     top: 50%;
