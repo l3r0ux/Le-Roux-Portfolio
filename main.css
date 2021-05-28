@@ -42,8 +42,32 @@ img {
     top: 50%;
     transform: translate(-20%, -50%);
     mix-blend-mode: screen;
-    filter: drop-shadow(0 0 10px #007ea5);
+    /* filter: drop-shadow(0 0 10px #007ea5); */
+    transition: fill 200ms ease;
+    animation: shadow 1s ease 2s forwards;
     color: #007ea5;
+    overflow: visible;
+}
+#svg-text path {
+    stroke: #004a61;
+    stroke-width: 2px;
+    animation: fill 1s ease 2s forwards;
+}
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: #008fbb;
+    }
+}
+@keyframes shadow {
+    from {
+        filter: drop-shadow(0 0 50px #00ace0);
+    }
+    to {
+        filter: drop-shadow(0 0 30px #007ea5);
+    }
 }
 #landing {
     position: relative;

@@ -2,7 +2,33 @@ const landingPage = document.getElementById('landing');
 const homePage = document.getElementById('home');
 const scrollPos = document.querySelector(':root');
 
-// To animate the text
+// To animate home text svgs
+const homeText = document.querySelectorAll('#svg-text path');
+// console.log(homeText[0])
+for (let i = 0; i < homeText.length; i++) {
+    // The stroke-dasharray and the stroke-offset must start with the full length of the path
+    // console.log(`letter ${i} has a length of ${homeText[i].getTotalLength()}`)
+
+    // Web animations API to animate each letter in javascript
+    // Set each letters corresponding dasharray and offset values
+    // Setting stroke-dasharray to full length of path, then ofsetting it by that length aswell to make it dissapear
+    let specificLetter = homeText[i];
+    specificLetter.style.strokeDasharray = specificLetter.getTotalLength();
+    specificLetter.style.strokeDashoffset = specificLetter.getTotalLength();
+
+    // Make keyframes and options for each letter(path)
+    const keyframes = [
+        {strokeDashoffset: 0},
+    ];
+
+    const options = {
+        duration: 2000,
+        easing: 'ease',
+        fill: 'forwards',
+    }
+
+    homeText[i].animate(keyframes, options);
+}
 
 // Setting the page height to the height of the landing page and home page combined
 // so that the page is scrollable
