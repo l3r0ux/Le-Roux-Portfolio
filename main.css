@@ -123,3 +123,18 @@ img {
     margin: 4rem;
     font-size: 2rem;
 }
+
+@media (max-width: 420px) {
+    #landing {
+        background-image: radial-gradient(circle at top left, #99f8ff, #007ea5, #004a61, transparent, transparent, transparent);
+    }
+    #hero-text {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+    }
+    #svg-text {
+        width: 100%;
+    }
+}
