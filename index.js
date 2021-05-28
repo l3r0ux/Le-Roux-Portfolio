@@ -11,7 +11,7 @@ const shadows = ['#c0edff', '#ffd4bb', '#c0c1ff'];
 // Array containing all the stars and its related animation object so that we can check when a star is off screen and restart their animation
 const stars = [];
 
-const makeAndMoveStars = (i) => {
+const makeAndMoveStars = (i, isInit) => {
     // Generate random top position, select correct colors and randomize size for star
     const randSelectedColor = Math.floor(Math.random() * colors.length);
     const randVerticalPos = Math.random() * landingPage.offsetHeight + landingPage.offsetTop;
@@ -28,8 +28,10 @@ const makeAndMoveStars = (i) => {
     star.style.top = `${randVerticalPos}px`;
     star.style.left = `${horizontalPos}px`;
     star.classList.add('star');
+    // Add hidden class initially, remove after SVG Animation has finished (2s)
+    isInit ? star.classList.add('hidden') : '';
     star.id = `${i}`
-    landingPage.append(star)
+    landingPage.append(star);
 
     // Put corresponding animation duration/speed depending on size
     let duration = 0;
@@ -72,10 +74,11 @@ const makeAndMoveStars = (i) => {
 }
 
 // Function to make initial stars
-function makeStars(starCount) {
+function makeStars(starCount, isInit = true) {
+    console.log(isInit);
     for (i = 0; i < starCount; i++) {
         // Make stars
-        makeAndMoveStars(i);
+        makeAndMoveStars(i, isInit);
     }
 
     // Prefill starcount with amount currently on screen
@@ -108,6 +111,13 @@ let id = setInterval((function () {
 
 // Making initial stars on page load
 makeStars(80);
+// Remove hidden class when SVG animation is finished
+setTimeout(() => {
+    // remove hidden class from stars when SVG animation has finished
+    document.querySelectorAll('.star').forEach((star) => {
+        star.classList.remove('hidden');
+    });
+}, 2000)
 
 // applyStarCount.addEventListener('click', () => {
 //     // Remove all stars
@@ -117,10 +127,10 @@ makeStars(80);
 //     makeStars(starCountInput.value);
 // })
 
+// Web animations API to animate each letter in javascript
 for (let i = 0; i < homeText.length; i++) {
     // The stroke-dasharray and the stroke-offset must start with the full length of the path
 
-    // Web animations API to animate each letter in javascript
     // Set each letters corresponding dasharray and offset values
     // Setting stroke-dasharray to full length of path, then ofsetting it by that length aswell to make it dissapear
     let specificLetter = homeText[i];
@@ -139,6 +149,7 @@ for (let i = 0; i < homeText.length; i++) {
         fill: 'forwards',
     }
 
+    // Animate SVG paths
     homeText[i].animate(keyframes, options);
 }
 
@@ -160,7 +171,7 @@ window.addEventListener('scroll', () => {
         if (stars.length <= 0) {
             // Make new amount of stars
             // makeStars(starCountInput.value);
-            makeStars(80);
+            makeStars(80, false);
         }
     }
     // if bottom of landing page is higher than top of screen, set degrees to 90 incase it couldnt update quick enough

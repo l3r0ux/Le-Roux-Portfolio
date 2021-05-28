@@ -120,6 +120,11 @@ img {
     z-index: 1;
     mix-blend-mode: screen;
     transform: translateX(0);
+    opacity: 1;
+    transition: opacity 2000ms ease;
+}
+.star.hidden {
+    opacity: 0;
 }
 
 #home {
