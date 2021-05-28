@@ -155,7 +155,7 @@ for (let i = 0; i < homeText.length; i++) {
 
 // Setting the page height to the height of the landing page and home page combined
 // so that the page is scrollable
-document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight}px`
+document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight}px`;
 
 // === 3D TRANSFORM ===
 window.addEventListener('scroll', () => {
