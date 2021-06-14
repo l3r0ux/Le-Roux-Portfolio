@@ -15,11 +15,14 @@
             <div id="cube">
                 <section id="landing">
                     <!-- user can choose how many stars they want to see -->
-                    <!-- <div id="star-count">
+                    <div id="star-count">
+                        <p>Want more stars?</p>
+                        <div id="controls">
                         <a>STAR COUNT:</a>
-                        <input id="star-count-input" type="number">
-                        <button id="submit">APPLY</button>
-                    </div> -->
+                            <input id="star-count-input" type="number">
+                            <button id="submit">APPLY</button>
+                        </div>
+                    </div>
                     <div id="hero-text">
                         <!-- Home text to be animated -->
                         <svg id="svg-text" width="650" height="109" viewBox="0 0 804 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,39 +64,62 @@
                             <path d="M777.816 78.6875V108.125H770.644V78.7812C770.644 76.6562 771.55 74.9688 773.362 73.7188C774.581 72.9062 775.925 72.5 777.394 72.5H787.097C791.441 72.5 794.925 73.7969 797.55 76.3906C799.769 78.6094 800.878 81.3438 800.878 84.5938V85.9531C800.878 90.0156 799.269 93.1719 796.05 95.4219C794.831 96.2656 793.487 96.9062 792.019 97.3438L801.675 108.125H792.722L783.816 98.0469H778.284L782.128 91.8594H787.097C790.034 91.8594 792.019 90.8438 793.05 88.8125C793.456 87.9688 793.659 87.0156 793.659 85.9531V84.5938C793.659 81.7812 792.394 79.9531 789.862 79.1094C789.019 78.8281 788.097 78.6875 787.097 78.6875H777.816Z" />
                         </svg>
                     </div>
+                    <button id="continue-to-portfolio">Continue...</button>
                     <!-- Append stars here -->
                 </section>
     
                 <section id="home">
-                    
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
-                    <h1>Jou ma se hello</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iure omnis beatae consectetur eveniet asperiores esse repellat laudantium, illo quisquam amet accusantium dicta possimus incidunt itaque ea deleniti modi dolore officiis recusandae sunt dolorum! Similique itaque repudiandae quibusdam nobis et ab libero debitis esse aperiam mollitia optio facere ratione illo explicabo perspiciatis, placeat inventore. Quidem aliquam minus nihil blanditiis molestias!
-                    </p>
+
+                    <section id="about-me">
+                        <h1>About me</h1>
+                        <div id="about-me__info">
+                            <img id="about-me__image" src="/assets/images/IMG-20180511-WA0021.jpg" alt="Developer portrait">
+                            <div id="about-me__text">
+                                <h3>Hi! I'm Le Roux Vermeulen, a self-taught web developer based in South Africa.</h3>
+                                <p>After high school I studied and graduated with a psychology degree, but I knew it was not what I wanted to do with my life. Technology has always interested me, so I started to learn a bit of programming, and was hooked ever since. I have been studying web development for about a year and a half in total, and want to further my knowledge and gain real experience and contribute to real world projects.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="projects">
+                        <h1>My Projects</h1>
+
+                        <h2><a href="https://nomadcafe.herokuapp.com/">Nomad Cafe</a></h2>
+                        <div class="project">
+                            <div class="project__image-container">
+                                <img class="project__image" src="/assets/images/nomad1.PNG" alt="project image">
+                            </div>
+                            <!-- Make image hoverable, then it shows the icons of the tech used -->
+                            <p class="project-description">This is a fullstack web application that I made for a mobile coffee business using Node.js with express, and MongoDB with mongoose on the backend. The owner can log into an admin panel, where they can add their menu, events where they are going to be, gallery images and their exact location for when they are at an event. I wrote everything from scratch with vanilla html, css and javascript on the front end, and I also made/edited all of the images for the site with Photoshop. The API I wrote with Node.js is RESTful and has full CRUD functionality. I also followed the MVC architecture for the routes. This web app was designed from a mobile first perspective and is fully responsive.</p>
+                        </div>
+
+                        <h2><a href="https://local-storage-todo-list.herokuapp.com/index.html">To-Do app</a></h2>
+                        <div class="project">
+                            <div class="project__image-container">
+                                <img class="project__image" src="/assets/images/todo list video gif.gif" alt="project image">
+                            </div>
+                            <!-- Make image hoverable, then it shows the icons of the tech used -->
+                            <p class="project-description">This is a fully responsive To-Do list app written with vanilla HTML, CSS and JavaScript that uses the localStorage API to store all the users To-Do lists and settings. The user has the ability to add multiple To Do lists, and drag and drop them where they like. Another main feature is that the user can optionally provide a due date and time. Then the color of the To Do item is going to change according to the time left.</p>
+                        </div>
+
+                        <h2><a href="https://show-vs-show.herokuapp.com/">Show-Down</a></h2>
+                        <div class="project">
+                            <div class="project__image-container">
+                                <img class="project__image" src="/assets/images/showdown1.PNG" alt="project image">
+                            </div>
+                            <!-- Make image hoverable, then it shows the icons of the tech used -->
+                            <p class="project-description">This is a fully responsive To-Do list app written with vanilla HTML, CSS and JavaScript that uses the localStorage API to store all the users To-Do lists and settings. The user has the ability to add multiple To Do lists, and drag and drop them where they like. Another main feature is that the user can optionally provide a due date and time. Then the color of the To Do item is going to change according to the time left.</p>
+                        </div>
+
+                        <h2><a href="https://play.google.com/store/apps/details?id=com.FEBA.FebaRadio">FEBA Radio SA Mobile App</a></h2>
+                        <div class="project">
+                            <div class="project__image-container">
+                                <img class="project__image" src="/assets/images/feba1.jpg" alt="project image">
+                            </div>
+                            <!-- Make image hoverable, then it shows the icons of the tech used -->
+                            <p class="project-description">This is a mobile app that I made for Feba Radio SA with Flutter and Dart. The main feature of the app is the live radio. A user can click on live radio, select a country, and then listen to that countries' Feba Radio station. It also features scheduled push notifications with Firebase.</p>
+                        </div>
+                    </section>
                     
                 </section>
             </div>

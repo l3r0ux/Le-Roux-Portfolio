@@ -4,8 +4,8 @@ const scrollPos = document.querySelector(':root');
 // To animate home text svgs
 const homeText = document.querySelectorAll('#svg-text path');
 
-// const starCountInput = document.getElementById('star-count-input')
-// const applyStarCount = document.getElementById('submit')
+const starCountInput = document.getElementById('star-count-input')
+const applyStarCount = document.getElementById('submit')
 const colors = ['#97e1ff', '#ffae80', '#6171ff'];
 const shadows = ['#c0edff', '#ffd4bb', '#c0c1ff'];
 // Array containing all the stars and its related animation object so that we can check when a star is off screen and restart their animation
@@ -82,7 +82,7 @@ function makeStars(starCount, isInit = true) {
     }
 
     // Prefill starcount with amount currently on screen
-    // starCountInput.value = starCount;
+    starCountInput.value = starCount;
 }
 // function to remove stars
 function removeStars() {
@@ -107,7 +107,7 @@ let id = setInterval((function () {
             star.animationObj.play();
         }
     }
-}), 1)
+}), 1000)
 
 // Making initial stars on page load
 makeStars(80);
@@ -119,13 +119,13 @@ setTimeout(() => {
     });
 }, 2000)
 
-// applyStarCount.addEventListener('click', () => {
-//     // Remove all stars
-//     removeStars();
+applyStarCount.addEventListener('click', () => {
+    // Remove all stars
+    removeStars();
 
-//     // Make new amount of stars
-//     makeStars(starCountInput.value);
-// })
+    // Make new amount of stars
+    makeStars(starCountInput.value, false);
+})
 
 // Web animations API to animate each letter in javascript
 for (let i = 0; i < homeText.length; i++) {
@@ -152,6 +152,16 @@ for (let i = 0; i < homeText.length; i++) {
     // Animate SVG paths
     homeText[i].animate(keyframes, options);
 }
+// Add visible class to image after 2 seconds
+// const landingImage = document.getElementById('landing-image');
+// setTimeout(() => {
+//     landingImage.classList.add('visible');
+// }, 2000)
+
+// Click listener for scrolling to landing page from main page
+document.getElementById('continue-to-portfolio').addEventListener('click' , () => {
+    window.scrollBy(0, window.innerHeight);
+})
 
 // Setting the page height to the height of the landing page and home page combined
 // so that the page is scrollable
@@ -163,7 +173,7 @@ window.addEventListener('scroll', () => {
     if (landingPage.getBoundingClientRect().bottom > 0) {
         scrollPos.style.setProperty('--transform', `${(parseFloat(90 - landingPage.getBoundingClientRect().bottom / window.innerHeight * 90)).toFixed(2)}deg`)
         landingPage.style.opacity = `${landingPage.getBoundingClientRect().bottom / window.innerHeight}`
-        homePage.style.opacity = `${1 - landingPage.getBoundingClientRect().bottom / window.innerHeight}`
+        homePage.style.opacity = `${0.9 - landingPage.getBoundingClientRect().bottom / window.innerHeight}`
 
         // If landing page bottom it still not at top -
         // AND there are no stars(scrolled up from below the landing page, since stars are removed when scroll below landing page):
@@ -178,7 +188,7 @@ window.addEventListener('scroll', () => {
     else {
         scrollPos.style.setProperty('--transform', '90deg')
         landingPage.style.opacity = '1';
-        homePage.style.opacity = '1';
+        homePage.style.opacity = '0.9';
 
         // Remove all stars
         removeStars();
