@@ -235,7 +235,22 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-#CV-download {
+.cta-button {
+    margin-top: 2rem;
+    background-color: tomato;
+    box-shadow: 0 0 10px 0 tomato;
+    filter: none;
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    transition: box-shadow 200ms ease;
+}
+.cta-button:hover {
+    box-shadow: 0 0 15px 0 tomato;
+    filter: none;
+}
+
+/* #CV-download {
     margin-top: 2rem;
     background-color: tomato;
     box-shadow: 0 0 10px 0 tomato;
@@ -248,7 +263,7 @@ a:hover {
 #CV-download:hover {
     box-shadow: 0 0 15px 0 tomato;
     filter: none;
-}
+} */
 
 #key-skills {
     max-width: 70%;
@@ -305,11 +320,18 @@ a:hover {
     max-width: 50rem;
 }
 
+.project-container {
+    background-color: #97e2ff17;
+    box-shadow: 0 0 10px 0 #97e2ff;   
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-bottom: 5rem;
+}
+
 .project {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
 }
 
 .project__image-container {
