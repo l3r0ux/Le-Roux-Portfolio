@@ -69,54 +69,6 @@ body {
     background-attachment: fixed;
 }
 
-/* Infinite autoplay carousel */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-150px * 8));
-    }
-}
-.slider {
-    height: 100px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 60%;
-    margin-bottom: 5rem;
-}
-.slider::before, .slider::after {
-    background: linear-gradient(to right, #13151f 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-}
-.slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-.slider::before {
-    left: 0;
-    top: 0;
-}
-.slider .slide-track {
-    animation: scroll 15s linear infinite;
-    display: flex;
-    width: 100%;
-}
-.slider .slide,
-.slider .slide img {
-    height: 80px;
-    width: 80px;
-    margin: 0 2rem;
-    overflow: visible;
-}
-/* *********** */
-
 .container {
     width: 100%;
     height: 100vh;
@@ -231,6 +183,7 @@ img {
 h1 {
     margin: 1rem 0 2rem 0;
     font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.432));
 }
 
 h2 {
@@ -247,6 +200,7 @@ h2 {
 a {
     text-decoration: none;
     color: white;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.274));
     transition: filter 200ms ease;
 }
 a:hover {
@@ -280,6 +234,72 @@ a:hover {
 #about-me__text h3 {
     margin-bottom: 1rem;
 }
+
+#CV-download {
+    margin-top: 2rem;
+    background-color: tomato;
+    box-shadow: 0 0 10px 0 tomato;
+    filter: none;
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    transition: box-shadow 200ms ease;
+}
+#CV-download:hover {
+    box-shadow: 0 0 15px 0 tomato;
+    filter: none;
+}
+
+#key-skills {
+    max-width: 70%;
+}
+/* Infinite autoplay carousel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-150px * 8));
+    }
+}
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.slider::before, .slider::after {
+    background: linear-gradient(to right, #13151f 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.slider::before {
+    left: 0;
+    top: 0;
+}
+.slider .slide-track {
+    animation: scroll 15s linear infinite;
+    display: flex;
+    width: 100%;
+}
+.slider .slide,
+.slider .slide img {
+    height: 80px;
+    width: 80px;
+    margin: 0 2rem;
+    overflow: visible;
+}
+/* *********** */
 
 #projects {
     max-width: 50rem;
