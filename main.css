@@ -4,6 +4,24 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1rem;
     scroll-behavior: smooth;
+    font-family: 'a Astro Space';
+
+}
+
+h3 {
+    font-family: 'roboto';
+}
+
+p {
+    font-family: 'roboto';
+
+}
+
+@font-face {
+    font-family: 'a Astro Space';
+    font-family: 'roboto';
+    src: url('assets/fonts/AstroSpace-0Wl3o.otf');
+    src: url('assets/fonts/RobotoThin-xjmK.ttf');
 }
 
 #star-count {
@@ -242,7 +260,7 @@ a:hover {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 #about-me__image {
