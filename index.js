@@ -127,7 +127,20 @@ applyStarCount.addEventListener('click', () => {
     makeStars(starCountInput.value, false);
 })
 
-// Web animations API to animate each letter in javascript
+// Web animations API to animate shadow light and each letter with javascript 
+const heroText = document.querySelector('#hero-text');
+const keyframes = [
+    { filter: 'drop-shadow(0 0 50px #55d7ff)' },
+    { filter: 'drop-shadow(0 0 30px #55d7ff)' }
+]
+const options = {
+    duration: 500,
+    delay: 1800,
+    easing: 'ease',
+    fill: 'forwards'
+}
+heroText.animate(keyframes, options);
+
 for (let i = 0; i < homeText.length; i++) {
     // The stroke-dasharray and the stroke-offset must start with the full length of the path
 
@@ -139,27 +152,55 @@ for (let i = 0; i < homeText.length; i++) {
     specificLetter.style.strokeDashoffset = specificLetter.getTotalLength();
 
     // Make keyframes and options for each letter(path)
-    const keyframes = [
+    const keyframes1 = [
         { strokeDashoffset: 0 },
     ];
+    const keyframes2 = [
+        { fill: '#008fbb' }
+    ]
 
-    const options = {
+    const options1 = {
         duration: 2000,
         easing: 'ease',
         fill: 'forwards',
     }
+    const options2 = {
+        duration: 500,
+        delay: 1800,
+        easing: 'ease',
+        fill: 'forwards'
+    }
 
     // Animate SVG paths
-    homeText[i].animate(keyframes, options);
+    homeText[i].animate(keyframes1, options1);
+    homeText[i].animate(keyframes2, options2)
 }
-// Add visible class to image after 2 seconds
-// const landingImage = document.getElementById('landing-image');
-// setTimeout(() => {
-//     landingImage.classList.add('visible');
-// }, 2000)
+// Add visible class to other elements after 2 seconds
+const elements = document.querySelectorAll('.fade-in-element');
+setTimeout(() => {
+    for (let element of elements) {
+        element.classList.add('visible');
+    }
+}, 2000);
+
+// To animate the "..." on the continue button
+const continueButton = document.querySelector('#continue-to-portfolio');
+const text = 'Continue...';
+let idx = 8;
+
+writeText();
+
+function writeText() {
+    continueButton.innerText = `Continue${text.slice(8, idx)}`;
+    idx++;
+    if (idx > text.length) {
+        idx = 8;
+    }
+    setTimeout(writeText, 800)
+}
 
 // Click listener for scrolling to landing page from main page
-document.getElementById('continue-to-portfolio').addEventListener('click' , () => {
+document.getElementById('continue-to-portfolio').addEventListener('click', () => {
     window.scrollBy(0, window.innerHeight);
 })
 

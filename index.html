@@ -15,10 +15,9 @@
             <div id="cube">
                 <section id="landing">
                     <!-- user can choose how many stars they want to see -->
-                    <div id="star-count">
+                    <div id="star-count" class="fade-in-element">
                         <p>Want more stars?</p>
                         <div id="controls">
-                        <span>STAR COUNT:</span>
                             <input id="star-count-input" type="number">
                             <button id="submit">APPLY</button>
                         </div>
@@ -64,23 +63,76 @@
                             <path d="M777.816 78.6875V108.125H770.644V78.7812C770.644 76.6562 771.55 74.9688 773.362 73.7188C774.581 72.9062 775.925 72.5 777.394 72.5H787.097C791.441 72.5 794.925 73.7969 797.55 76.3906C799.769 78.6094 800.878 81.3438 800.878 84.5938V85.9531C800.878 90.0156 799.269 93.1719 796.05 95.4219C794.831 96.2656 793.487 96.9062 792.019 97.3438L801.675 108.125H792.722L783.816 98.0469H778.284L782.128 91.8594H787.097C790.034 91.8594 792.019 90.8438 793.05 88.8125C793.456 87.9688 793.659 87.0156 793.659 85.9531V84.5938C793.659 81.7812 792.394 79.9531 789.862 79.1094C789.019 78.8281 788.097 78.6875 787.097 78.6875H777.816Z" />
                         </svg>
                     </div>
-                    <button id="continue-to-portfolio">Continue...</button>
+                    <button id="continue-to-portfolio" class="fade-in-element">Continue...</button>
                     <!-- Append stars here -->
                 </section>
     
                 <section id="home">
 
                     <section id="about-me">
-                        <h1>About me</h1>
+                        <h1>Welcome!</h1>
                         <div id="about-me__info">
                             <img id="about-me__image" src="assets/images/IMG-20180511-WA0021.jpg" alt="Developer portrait">
                             <div id="about-me__text">
-                                <h3>Hi! I'm Le Roux Vermeulen, a self-taught web developer based in South Africa.</h3>
+                                <h3>I'm Le Roux Vermeulen, a self-taught web developer based in South Africa.</h3>
                                 <p>After high school I studied and graduated with a psychology degree, but I knew it was not what I wanted to do with my life. Technology has always interested me, so I started to learn a bit of programming, and was hooked ever since. I have been studying web development for about a year and a half in total, and want to further my knowledge and gain real experience and contribute to real world projects.</p>
                             </div>
                         </div>
-                        <h2>Key Skills</h2>
+                        <h1>Key Skills</h1>
                     </section>
+
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="slide">
+                                <img src="assets/images/html5.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/css-3.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/javascript.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/bootstrap.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/node.png" style="width: 130px; margin: 0 0.8rem;" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/mongodb.png" style="width: 130px; margin: 0 1rem;" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/git.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/flutter.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/html5.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/css-3.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/javascript.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/bootstrap.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/node.png" style="width: 130px; margin: 0 0.8rem;" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/mongodb.png" style="width: 130px; margin: 0 1rem;" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/git.png" alt="logo-image" />
+                            </div>
+                            <div class="slide">
+                                <img src="assets/images/flutter.png" alt="logo-image" />
+                            </div>
+                        </div>
+                    </div>
 
                     <section id="projects">
                         <h1>My Projects</h1>
@@ -97,7 +149,7 @@
                         <h2><a href="https://local-storage-todo-list.herokuapp.com/index.html">To-Do app</a></h2>
                         <div class="project">
                             <div class="project__image-container">
-                                <img class="project__image" src="assets/images/todo list video gif.gif" alt="project image">
+                                <img class="project__image" src="assets/images/todo2.PNG" alt="project image">
                             </div>
                             <!-- Make image hoverable, then it shows the icons of the tech used -->
                             <p class="project-description">This is a fully responsive To-Do list app written with vanilla HTML, CSS and JavaScript that uses the localStorage API to store all the users To-Do lists and settings. The user has the ability to add multiple To Do lists, and drag and drop them where they like. Another main feature is that the user can optionally provide a due date and time. Then the color of the To Do item is going to change according to the time left.</p>
@@ -106,7 +158,7 @@
                         <h2><a href="https://show-vs-show.herokuapp.com/">Show-Down</a></h2>
                         <div class="project">
                             <div class="project__image-container">
-                                <img class="project__image" src="assets/images/showdownVideo.gif" alt="project image">
+                                <img class="project__image" src="assets/images/showdown1.PNG" alt="project image">
                             </div>
                             <!-- Make image hoverable, then it shows the icons of the tech used -->
                             <p class="project-description">This is a fully responsive To-Do list app written with vanilla HTML, CSS and JavaScript that uses the localStorage API to store all the users To-Do lists and settings. The user has the ability to add multiple To Do lists, and drag and drop them where they like. Another main feature is that the user can optionally provide a due date and time. Then the color of the To Do item is going to change according to the time left.</p>
