@@ -118,7 +118,6 @@ img {
     height: 100%;
     background-color: #13151f;
     background-image: radial-gradient(circle at right, #99f8ff, #007ea5, #004a61, transparent, transparent, transparent);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,7 +174,6 @@ img {
     align-items: center;
     text-align: center;
     opacity: 1;
-
     transform: rotateX(-90deg);
     transform-origin: top;
 }
@@ -223,6 +221,7 @@ a:hover {
     height: 20rem;
     border-radius: 1rem;
     margin-right: 1rem;
+    box-shadow: 0 0 20px 0 #97e2ff3b; 
 }
 
 #about-me__text {
@@ -241,7 +240,7 @@ a:hover {
     box-shadow: 0 0 10px 0 tomato;
     filter: none;
     width: fit-content;
-    padding: 0.5rem;
+    padding: 0.6rem;
     border-radius: 2rem;
     transition: box-shadow 200ms ease;
 }
@@ -249,21 +248,6 @@ a:hover {
     box-shadow: 0 0 15px 0 tomato;
     filter: none;
 }
-
-/* #CV-download {
-    margin-top: 2rem;
-    background-color: tomato;
-    box-shadow: 0 0 10px 0 tomato;
-    filter: none;
-    width: fit-content;
-    padding: 0.5rem;
-    border-radius: 2rem;
-    transition: box-shadow 200ms ease;
-}
-#CV-download:hover {
-    box-shadow: 0 0 15px 0 tomato;
-    filter: none;
-} */
 
 #key-skills {
     max-width: 70%;
@@ -322,8 +306,8 @@ a:hover {
 
 .project-container {
     background-color: #97e2ff17;
-    box-shadow: 0 0 10px 0 #97e2ff;   
-    padding: 1rem;
+    box-shadow: 0 0 20px 0 #97e2ff3b;   
+    padding: 2rem;
     border-radius: 2rem;
     margin-bottom: 5rem;
 }
@@ -347,7 +331,11 @@ a:hover {
 
 .project-description {
     flex: 1;
+}
+
+.project-description p {
     text-align: left;
+    margin-bottom: 2rem ;
 }
 
 @media (max-width: 420px) {
