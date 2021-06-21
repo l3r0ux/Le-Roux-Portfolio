@@ -79,7 +79,7 @@ body {
     justify-content: center;
 }
 
-img {
+#about-me__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -236,6 +236,7 @@ a:hover {
 
 .cta-button {
     margin-top: 2rem;
+    margin-left: 1rem;
     background-color: tomato;
     box-shadow: 0 0 10px 0 tomato;
     filter: none;
@@ -301,7 +302,7 @@ a:hover {
 /* *********** */
 
 #projects {
-    max-width: 50rem;
+    max-width: 60rem;
 }
 
 .project-container {
@@ -319,9 +320,15 @@ a:hover {
 }
 
 .project__image-container {
-    flex: 1;
-    max-height: 20rem;
+    flex: 4;
+    height: 300px;
     margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.project__image-container img {
+    height: 300px;
+    object-fit: cover;
     border-radius: 1rem;
 }
 
@@ -330,7 +337,7 @@ a:hover {
 }
 
 .project-description {
-    flex: 1;
+    flex: 3;
 }
 
 .project-description p {
