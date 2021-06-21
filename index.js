@@ -237,24 +237,28 @@ window.addEventListener('scroll', () => {
 })
 
 // To transfrom project images
-const imgs = document.querySelector('.project__image-container');
-const img = document.querySelectorAll('.project__image-container .img')
+// Getting amount of projects
+const projects = document.querySelectorAll('.project');
+// To get dynamic ending index for each different project
+const imgs = document.querySelectorAll('.project__image-container');
 
-let imageIndex = 0;
+for (let i = 0; i < projects.length; i++) {
+    let imageIndex = 0;
 
-setInterval(run, 4000);
+    setInterval(run, 4000);
 
-function run () {
-    imageIndex++;
-    changeImage();
-}
-
-function changeImage() {
-    if(imageIndex > img.length - 1) {
-        imageIndex = 0
-    } else if(imageIndex < 0) {
-        imageIndex = img.length - 1
+    function run() {
+        imageIndex++;
+        changeImage();
     }
 
-    imgs.style.transform = `translateX(${-imageIndex * 600}px)`
+    function changeImage() {
+        if (imageIndex > imgs[i].children.length - 1) {
+            imageIndex = 0
+        } else if (imageIndex < 0) {
+            imageIndex = imgs[i].children.length - 1
+        }
+
+        imgs[i].style.transform = `translateX(${-imageIndex * 600}px)`
+    }
 }
