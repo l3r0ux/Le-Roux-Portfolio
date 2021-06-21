@@ -129,7 +129,7 @@ body {
     font-size: 1.5rem;
     filter: drop-shadow(0 0 5px #008fbb);
     bottom: 2rem;
-    left: calc(50% - 65px);
+    /* left: calc(50% - 65px); */
     border-radius: 2rem;
     border: none;
     background-color: transparent;
@@ -352,10 +352,6 @@ a:hover {
     overflow: hidden;
 }
 
-.mobile-image {
-    max-width: 10rem;
-}
-
 .project-description {
     flex: 3;
 }
@@ -365,7 +361,8 @@ a:hover {
     margin-bottom: 2rem ;
 }
 
-@media (max-width: 420px) {
+/* mobile mode smaller than big tablet */
+@media (max-width: 1024px) {
     #landing {
         background-image: radial-gradient(circle at top left, #99f8ff, #007ea5, #004a61, transparent, transparent, transparent);
     }
@@ -377,5 +374,67 @@ a:hover {
     }
     #svg-text {
         width: 100%;
+    }
+    #continue-to-portfolio {
+        font-size: 1rem;
+    }
+
+    #home {
+        padding: 0.5rem;
+    }
+
+    #about-me__info {
+        flex-direction: column;
+
+    }
+    #about-me__image {
+        margin-bottom: 1.5rem;
+    }
+    #about-me__text {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #key-skills {
+        max-width: 100%;
+    }
+    .slider::before, .slider::after {
+        width: 150px;
+    }
+
+    .project {
+        align-items: center;
+        justify-content: center;
+    }
+    .carousel {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0;
+    }
+    .img {
+        width: 90vw;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .project__image {
+        max-height: 300px;
+        max-width: 100%;
+    }
+
+
+    #projects {
+        width: 95vw;
+    }
+    .project {
+        flex-direction: column;
+    }
+    .project-container {
+        padding: 0.5rem;
+    }
+    .project-description p {
+        text-align: center;
     }
 }

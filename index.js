@@ -239,6 +239,7 @@ window.addEventListener('scroll', () => {
 // To transfrom project images
 // Getting amount of projects
 const projects = document.querySelectorAll('.project');
+const img = document.querySelector('.img');
 // To get dynamic ending index for each different project
 const imgs = document.querySelectorAll('.project__image-container');
 
@@ -259,6 +260,6 @@ for (let i = 0; i < projects.length; i++) {
             imageIndex = imgs[i].children.length - 1
         }
 
-        imgs[i].style.transform = `translateX(${-imageIndex * 600}px)`
+        imgs[i].style.transform = `translateX(${-imageIndex * (window.innerWidth > 1024 ? 600 : img.offsetWidth)}px)`
     }
 }
