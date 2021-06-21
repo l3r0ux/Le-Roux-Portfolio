@@ -315,21 +315,41 @@ a:hover {
 
 .project {
     display: flex;
+}
+
+/* Window to project__image-container */
+.carousel {
+    display: flex;
+    height: 300px;
+    /* width: 600px; */
+    overflow: hidden;
+    margin-right: 1rem;
+    flex: 5;
+}
+
+/* The long container that will be transformed */
+.project__image-container {
+    display: flex;
+    /* Starts at 0 and will increment by 600px every time */
+    transform: translateX(0);
+    transition: transform 1000ms ease;
+}
+
+/* container around image to give it the same width as carousel window so that images can be centered within it (for mobile images) */
+.img {
+    width: 600px;
+    height: 300px;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.project__image-container {
-    flex: 4;
-    height: 300px;
-    margin-right: 1rem;
+/* Styling of the actual image */
+.project__image {
     border-radius: 1rem;
-}
-
-.project__image-container img {
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .mobile-image {

@@ -235,3 +235,26 @@ window.addEventListener('scroll', () => {
         removeStars();
     }
 })
+
+// To transfrom project images
+const imgs = document.querySelector('.project__image-container');
+const img = document.querySelectorAll('.project__image-container .img')
+
+let imageIndex = 0;
+
+setInterval(run, 4000);
+
+function run () {
+    imageIndex++;
+    changeImage();
+}
+
+function changeImage() {
+    if(imageIndex > img.length - 1) {
+        imageIndex = 0
+    } else if(imageIndex < 0) {
+        imageIndex = img.length - 1
+    }
+
+    imgs.style.transform = `translateX(${-imageIndex * 600}px)`
+}
