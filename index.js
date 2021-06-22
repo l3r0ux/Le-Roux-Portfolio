@@ -200,7 +200,7 @@ function writeText() {
 
 // Click listener for scrolling to landing page from main page
 document.getElementById('continue-to-portfolio').addEventListener('click', () => {
-    window.scrollBy(0, window.innerHeight);
+    window.scrollTo(0, window.innerHeight);
 })
 
 // Setting the page height to the height of the landing page and home page combined
