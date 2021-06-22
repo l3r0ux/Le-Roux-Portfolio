@@ -19,8 +19,11 @@ p {
 
 @font-face {
     font-family: 'a Astro Space';
-    font-family: 'roboto';
     src: url('assets/fonts/AstroSpace-0Wl3o.otf');
+}
+
+@font-face {
+    font-family: 'roboto';
     src: url('assets/fonts/RobotoThin-xjmK.ttf');
 }
 
