@@ -156,7 +156,7 @@ for (let i = 0; i < homeText.length; i++) {
         { strokeDashoffset: 0 },
     ];
     const keyframes2 = [
-        { fill: '#008fbb' }
+        { fill: '#00c3ff' }
     ]
 
     const options1 = {
@@ -256,6 +256,7 @@ for (let i = 0; i < projects.length; i++) {
         changeImage();
     }
 
+    // function to call if change image manually by clicking
     function changeImage() {
         if (imageIndex > imgs[i].children.length - 1) {
             imageIndex = 0

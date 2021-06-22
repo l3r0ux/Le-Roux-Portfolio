@@ -66,6 +66,10 @@ p {
 #controls a {
     margin-right: 0.2rem;
 }
+#star-count-input,
+#submit {
+    font-size: 0.7rem;
+}
 
 body {
     background-image: radial-gradient(ellipse at center, #99f8ff, #007ea5, rgb(0, 0, 0));
@@ -104,12 +108,12 @@ body {
     top: 50%;
     transform: translate(-20%, -50%);
     mix-blend-mode: screen;
-    color: #007ea5;
+    color: #00c3ff;
     overflow: visible;
 }
 #svg-text path {
     fill: transparent;
-    stroke: #004a61;
+    stroke: #006786;
     /* Initial stroke width 0 */
     stroke-width: 0;
 }
@@ -136,7 +140,7 @@ body {
     border-radius: 2rem;
     border: none;
     background-color: transparent;
-    color: #008fbb;
+    color: #00c3ff;
     cursor: pointer;
     transition: filter 500ms ease, opacity 1000ms ease;
 }
