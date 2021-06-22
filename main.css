@@ -330,6 +330,20 @@ a:hover {
     align-items: center;
 }
 
+.project-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.project-icon {
+    margin-left: 0.8rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 0.4rem;
+}
+
 /* Window to project__image-container */
 .carousel {
     display: flex;
