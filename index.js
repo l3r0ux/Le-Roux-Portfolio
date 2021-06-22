@@ -207,6 +207,9 @@ document.getElementById('continue-to-portfolio').addEventListener('click', () =>
 // Setting the page height to the height of the landing page and home page combined
 // so that the page is scrollable
 document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight}px`;
+window.addEventListener('resize', () => {
+    document.body.style.height = `${homePage.scrollHeight + landingPage.scrollHeight}px`;
+})
 
 // === 3D TRANSFORM ===
 window.addEventListener('scroll', () => {
