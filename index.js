@@ -75,7 +75,6 @@ const makeAndMoveStars = (i, isInit) => {
 
 // Function to make initial stars
 function makeStars(starCount, isInit = true) {
-    console.log(isInit);
     for (i = 0; i < starCount; i++) {
         // Make stars
         makeAndMoveStars(i, isInit);
