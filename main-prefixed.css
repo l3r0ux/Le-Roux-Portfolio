@@ -576,7 +576,7 @@ a:hover {
 
     }
     #about-me__image {
-        margin-bottom: 1.5rem;
+        margin: 0 0 1.5rem 0;
     }
     #about-me__text {
         text-align: center;
