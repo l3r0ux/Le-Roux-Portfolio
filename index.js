@@ -4,6 +4,8 @@ const scrollPos = document.querySelector(':root');
 // To animate home text svgs
 const homeText = document.querySelectorAll('#svg-text path');
 
+const starCountContainer = document.getElementById('star-count');
+const starCountTrigger = document.querySelector('#mystery svg')
 const starCountInput = document.getElementById('star-count-input')
 const applyStarCount = document.getElementById('submit')
 const colors = ['#97e1ff', '#ffae80', '#6171ff'];
@@ -106,7 +108,7 @@ let id = setInterval((function () {
             star.animationObj.play();
         }
     }
-}), 1000)
+}), 1)
 
 // Making initial stars on page load
 makeStars(80);
@@ -118,7 +120,17 @@ setTimeout(() => {
     });
 }, 2000)
 
+starCountTrigger.addEventListener('click', () => {
+    starCountContainer.classList.toggle('hidden');
+})
+
 applyStarCount.addEventListener('click', () => {
+    // Not allow values under 1 or more than 3000
+    if (starCountInput.value < 1 || starCountInput.value > 400) {
+        // play popup message based on if user puts too much or too less
+        return;
+    }
+
     // Remove all stars
     removeStars();
 

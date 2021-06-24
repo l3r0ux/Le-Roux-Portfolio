@@ -28,13 +28,33 @@ p {
 }
 
 #star-count {
+    transform: translate(0, 0);
+    display: flex;
+    flex-direction: row;
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: rgba(255, 175, 128, 0.795);
-    padding: 1rem;
+    top: 0;
+    right: 0;
+    /* background-color: #00c3ff7e; */
+    padding: 1rem 1rem 1rem 0.2rem;
     border-radius: 2rem;
-    box-shadow: 0 0 15px rgba(255, 175, 128, 0.795);
+    /* box-shadow: 0 0 15px #00c3ff7e; */
+    transition: transform 200ms ease-in-out;
+}
+#star-count.hidden {
+    transform: translate(85%, -35%);
+}
+#mystery {
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.5rem;
+    
+}
+#mystery svg {
+    cursor: pointer;
+    fill: #00ffff;
+    filter: drop-shadow(0 0 1px #97e1ff);
 }
 #submit {
     cursor: pointer;
@@ -61,10 +81,19 @@ p {
 }
 #controls {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: #00c3ffad;
+    box-shadow: 0 0 15px #00c3ff7e;
+    border-radius: 2rem;
+    padding: 0.8rem;
+    font-weight: 600;
 }
-#controls a {
-    margin-right: 0.2rem;
+#inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #star-count-input,
 #submit {
@@ -149,7 +178,7 @@ body {
 }
 .fade-in-element {
     opacity: 0;
-    transition: opacity 1000ms ease;
+    transition: all 1000ms ease;
 }
 .fade-in-element.visible {
     opacity: 1;
