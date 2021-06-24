@@ -120,11 +120,10 @@ setTimeout(() => {
     });
 }, 2000)
 
-starCountTrigger.addEventListener('click', () => {
-    starCountContainer.classList.toggle('hidden');
-})
+const starCountForm = document.getElementById('star-count-form');
+starCountForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-applyStarCount.addEventListener('click', () => {
     // Not allow values under 1 or more than 3000
     if (starCountInput.value < 1 || starCountInput.value > 400) {
         // play popup message based on if user puts too much or too less
@@ -140,6 +139,10 @@ applyStarCount.addEventListener('click', () => {
 
     // Make new amount of stars
     makeStars(starCountInput.value, false);
+});
+
+starCountTrigger.addEventListener('click', () => {
+    starCountContainer.classList.toggle('hidden');
 })
 
 // Web animations API to animate shadow light and each letter with javascript 
