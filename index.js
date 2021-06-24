@@ -128,6 +128,10 @@ applyStarCount.addEventListener('click', () => {
     // Not allow values under 1 or more than 3000
     if (starCountInput.value < 1 || starCountInput.value > 400) {
         // play popup message based on if user puts too much or too less
+        starCountInput.style.backgroundColor = 'rgba(255, 0, 0, 0.527)';
+        setTimeout(() => {
+            starCountInput.style.backgroundColor = '';
+        }, 200)
         return;
     }
 

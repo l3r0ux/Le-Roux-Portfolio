@@ -73,11 +73,15 @@ p {
     border: 1px solid #6171ff;
     height: 1.5rem;
     width: 3rem;
+    transition: all 200ms ease;
 }
 #star-count p {
     text-align: center;
     margin: 0;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+#star-count p:nth-of-type(2) {
+    font-size: 0.9rem;
 }
 #controls {
     display: flex;
