@@ -74,8 +74,21 @@ p {
 #mystery svg {
     cursor: pointer;
     fill: #00ffff;
+    animation-name: pulse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
     -webkit-filter: drop-shadow(0 0 1px #97e1ff);
             filter: drop-shadow(0 0 1px #97e1ff);
+}
+@keyframes pulse {
+    from {
+        filter: drop-shadow(0 0 1px #97e1ff);
+    }
+    to {
+        filter: drop-shadow(0 0 10px #97e1ff);
+    }
 }
 #submit {
     cursor: pointer;
