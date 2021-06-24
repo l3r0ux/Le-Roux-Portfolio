@@ -74,20 +74,37 @@ p {
 #mystery svg {
     cursor: pointer;
     fill: #00ffff;
-    animation-name: pulse;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    -webkit-animation-name: pulse;
+            animation-name: pulse;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     -webkit-filter: drop-shadow(0 0 1px #97e1ff);
             filter: drop-shadow(0 0 1px #97e1ff);
 }
-@keyframes pulse {
+@-webkit-keyframes pulse {
     from {
-        filter: drop-shadow(0 0 1px #97e1ff);
+        -webkit-filter: drop-shadow(0 0 1px #97e1ff);
+                filter: drop-shadow(0 0 1px #97e1ff);
     }
     to {
-        filter: drop-shadow(0 0 10px #97e1ff);
+        -webkit-filter: drop-shadow(0 0 10px #97e1ff);
+                filter: drop-shadow(0 0 10px #97e1ff);
+    }
+}
+@keyframes pulse {
+    from {
+        -webkit-filter: drop-shadow(0 0 1px #97e1ff);
+                filter: drop-shadow(0 0 1px #97e1ff);
+    }
+    to {
+        -webkit-filter: drop-shadow(0 0 10px #97e1ff);
+                filter: drop-shadow(0 0 10px #97e1ff);
     }
 }
 #submit {
@@ -473,8 +490,8 @@ a:hover {
     margin-bottom: 5rem;
 }
 .slider::before, .slider::after {
-    background: -webkit-gradient(linear, left top, right top, from(#13151f), to(rgba(255, 255, 255, 0)));
     background: -o-linear-gradient(left, #13151f 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#13151f), to(rgba(255, 255, 255, 0)));
     background: linear-gradient(to right, #13151f 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 100px;
