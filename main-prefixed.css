@@ -437,10 +437,12 @@ a:hover {
 }
 
 #linkedIn {
-    filter: drop-shadow(0 0 5px #008fb3a2);
+    -webkit-filter: drop-shadow(0 0 5px #008fb3a2);
+            filter: drop-shadow(0 0 5px #008fb3a2);
 }
 #linkedIn:hover {
-    filter: drop-shadow(0 0 10px #008fb3a2);
+    -webkit-filter: drop-shadow(0 0 10px #008fb3a2);
+            filter: drop-shadow(0 0 10px #008fb3a2);
 }
 #linkedIn img {
     border-radius: 0.5rem;
