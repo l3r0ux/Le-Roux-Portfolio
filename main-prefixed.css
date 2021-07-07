@@ -478,6 +478,11 @@ a:hover {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: end;
+            align-items: flex-end;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 0.3rem;
 }
 
 .cta-button {
