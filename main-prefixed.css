@@ -481,7 +481,6 @@ a:hover {
     -webkit-box-align: end;
             align-items: flex-end;
         -ms-flex-align: center;
-            align-items: center;
     padding-bottom: 0.3rem;
 }
 
