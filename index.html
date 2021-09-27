@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="main-prefixed.css">
+    <link rel="stylesheet" href="main.css">
     <title>Le Roux Vermeulen</title>
 </head>
 <body>
@@ -84,7 +84,8 @@
                         <div id="about-me__info">
                             <img id="about-me__image" src="assets/images/IMG-20180511-WA0021.jpg" alt="Developer portrait">
                             <div id="about-me__text">
-                                <p>After high school I studied and graduated with a psychology degree, but I knew it was not what I wanted to do with my life. Technology has always interested me, so I started to learn a bit of programming, and was hooked ever since. I have been studying web development for about 2 years in total, and want to further my knowledge and gain real experience and contribute to real world projects.</p>
+                                <p>After high school I studied and graduated with a psychology degree, but as soon as I finished I knew it was not what I wanted to do with my life. Technology has always interested me, so I started to learn a bit of programming, and was hooked ever since. I have been studying web and software development since 2018, and am currently working at a startup company where I have an array of different responsibilities. I have to be flexible and able to learn fast as I need to learn a new technology roughly every 2 months.
+                                </p>
                                 <h5 id="contact-details">Contact Details:</h5>
                                 <p id="email">lerouxvermeulen@gmail.com</p>
                                 <p id="mobile">+27 66 290 0869</p>
@@ -115,6 +116,15 @@
                                     <img src="assets/images/skills-icons/bootstrap.png" alt="logo-image" />
                                 </div>
                                 <div class="slide">
+                                    <img src="assets/images/skills-icons/angular.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/skills-icons/java.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/skills-icons/android.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
                                     <img src="assets/images/skills-icons/node.png" style="width: 130px; margin: 0 0.8rem;" alt="logo-image" />
                                 </div>
                                 <div class="slide">
@@ -139,6 +149,15 @@
                                     <img src="assets/images/skills-icons/bootstrap.png" alt="logo-image" />
                                 </div>
                                 <div class="slide">
+                                    <img src="assets/images/skills-icons/angular.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/skills-icons/java.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
+                                    <img src="assets/images/skills-icons/android.png" alt="logo-image" />
+                                </div>
+                                <div class="slide">
                                     <img src="assets/images/skills-icons/node.png" style="width: 130px; margin: 0 0.8rem;" alt="logo-image" />
                                 </div>
                                 <div class="slide">
@@ -155,12 +174,52 @@
                     </section>
 
                     <section id="projects">
-                        <h1>My Projects</h1>
+                        <h1>Featured Projects</h1>
+                        <div class="project-container">
+                            <h2 class="project-name">
+                                <a href="https://www.manfex.co.za">Manfex</a>
+                                <img class="project-icon" src="assets/images/manfex-images/manfex-logo.png">
+                            </h2>
+                            <div class="project">
+                                <div class="carousel">
+                                    <div class="project__image-container">
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex1.PNG" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex2.PNG" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/loading-animations.gif" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex3.PNG" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex4.PNG" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex5.PNG" alt="project image">
+                                        </div>
+                                        <div class="img">
+                                            <img class="project__image" src="assets/images/manfex-images/manfex6.PNG" alt="project image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-description">
+                                    <p>This is a fully mobile responsive website I desgined and developed for a client while freelancing. It was made with HTML, CSS, a bit of JavaScript and Bootstrap. EmailJs was used to send emails from the client side, and I used CSS keyframes for the loading animations when sending an email.</p>
+                                    <a href="https://github.com/l3r0ux/manfex-site" class="cta-button" target="_blank">Code</a>
+                                    <a href="https://manfex.herokuapp.com/home.html" class="cta-button" target="_blank">Site</a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="project-container">
                             <h2 class="project-name">
                                 <a href="https://nomadcafe.herokuapp.com/">Nomad Cafe</a>
                                 <img class="project-icon" src="assets/images/project-icons/nomad-logo.png">
                             </h2>
+
                             <div class="project">
                                 <!-- Images displayed on a carousel -->
                                 <div class="carousel">
@@ -288,33 +347,6 @@
                                     <p>This is a fully responsive Node.js app where fetch requests are sent to the OMDb API so that user can search for two movies, series or video games to compare their stats, then a winner is declared. A combination of bootstrap and vanilla CSS was used for this projects' styling. Vanilla asynchronous JavaScript was also used to fetch data and append it to the page in real time with no page reloading. I also made Node.js backend to make requests from in order to hide the API key from the client side. I made use of the axios library to send requests to my Node.js backend which then also send requests with axios to fetch data from the OMDb API, and send that to the front end again.</p>
                                     <a href="https://github.com/l3r0ux/Show-Down" class="cta-button" target="_blank">Code</a>
                                     <a href="https://show-vs-show.herokuapp.com/" class="cta-button" target="_blank">Site</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-container">
-                            <h2 class="project-name">
-                                <a href="https://play.google.com/store/apps/details?id=com.FEBA.FebaRadio">FEBA Radio SA Mobile App</a>
-                                <img class="project-icon" src="assets/images/project-icons/feba-logo.png">
-                            </h2>
-                            <div class="project">
-                                <div class="carousel">
-                                    <div class="project__image-container">
-                                        <div class="img">
-                                            <img class="project__image" src="assets/images/feba-images/feba1.jpg" alt="project image">
-                                        </div>
-                                        <div class="img">
-                                            <img class="project__image" src="assets/images/feba-images/feba2.jpg" alt="project image">
-                                        </div>
-                                        <div class="img">
-                                            <img class="project__image" src="assets/images/feba-images/feba3.jpg" alt="project image">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Make image hoverable, then it shows the icons of the tech used -->
-                                <div class="project-description">
-                                    <p class="project-description">This is a mobile app that I made for Feba Radio SA with Flutter and Dart. The main feature of the app is the live radio. A user can click on live radio, select a country, and then listen to that countries' Feba Radio station. It also features scheduled push notifications with Firebase.</p>
-                                    <a href="https://play.google.com/store/apps/details?id=com.FEBA.FebaRadio" class="cta-button" target="_blank">Download</a>
                                 </div>
                             </div>
                         </div>
