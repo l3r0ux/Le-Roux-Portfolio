@@ -519,8 +519,8 @@ a:hover {
                 transform: translateX(0);
     }
     100% {
-        -webkit-transform: translateX(calc(-206.5px * 8));
-                transform: translateX(calc(-206.5px * 8));
+        -webkit-transform: translateX(calc(-206.5px * 9));
+                transform: translateX(calc(-206.5px * 9));
     }
 }
 @keyframes scroll {
@@ -529,8 +529,8 @@ a:hover {
                 transform: translateX(0);
     }
     100% {
-        -webkit-transform: translateX(calc(-206.5px * 8));
-                transform: translateX(calc(-206.5px * 8));
+        -webkit-transform: translateX(calc(-206.5px * 9));
+                transform: translateX(calc(-206.5px * 9));
     }
 }
 .slider {
